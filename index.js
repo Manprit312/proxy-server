@@ -27,7 +27,7 @@ app.get('/productData', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch data from external API' });
   }
 });
-pp.get('/myntra' ,async (req, res) => {
+app.get('/myntra' ,async (req, res) => {
   const affiliateURL = "https://track.vcommission.com/click?campaign_id=10882&pub_id=111864";
   try {
     const response = await fetch(affiliateURL);
