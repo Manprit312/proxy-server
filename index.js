@@ -27,5 +27,37 @@ app.get('/productData', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch data from external API' });
   }
 });
+pp.get('/myntra async (req, res) => {
+  const affiliateURL = "https://track.vcommission.com/click?campaign_id=10882&pub_id=111864";
+  try {
+    const response = await fetch(affiliateURL);
+    const data = await response.json();
+    res.json(data); // Return the affiliate data from Myntra
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch Myntra affiliate data' });
+  }
+});
+
+app.get('/ajio', async (req, res) => {
+  const affiliateURL = "https://track.vcommission.com/click?campaign_id=10364&pub_id=111864";
+  try {
+    const response = await fetch(affiliateURL);
+    const data = await response.json();
+    res.json(data); // Return the affiliate data from Ajio
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch Ajio affiliate data' });
+  }
+});
+
+app.get('/tata', async (req, res) => {
+  const affiliateURL = "https://track.vcommission.com/click?campaign_id=10240&pub_id=111864";
+  try {
+    const response = await fetch(affiliateURL);
+    const data = await response.json();
+    res.json(data); // Return the affiliate data from Tata Cliq
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch Tata Cliq affiliate data' });
+  }
+});
 
 app.listen(7000, () => console.log("Proxy server running on port 3000"));
